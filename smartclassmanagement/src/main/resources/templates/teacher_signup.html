@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>This is Signup page</title>
+</head>
+<body>
+<section >
+     <div class="container">
+         <div class="row">
+         
+           <div class="col-md-6 offset-md-2">
+              <div class="my-card mt-3">
+              
+              <div class="container text-center">
+              <img  style="width:50px;" src=""  th:src="@{/Image/register.png/}"></img>
+               </div>
+               
+               <h1 class='text-center'>Register Here!!</h1>
+               
+                <form novalidate action="" th:action="@{/teacher_register}" method="post" th:object="${teacher}" >
+               
+               
+                 <div class="form-group">
+                       <label for="teacher_id_field">Teacher Id</label>
+                       <input name="teacher_id"
+                        type="number" class="form-control"
+                         id="teacher_id_field" 
+                         aria-describedby="emailHelp" 
+                         placeholder="Enter Here"
+                        required="required" 
+                        th:value="${teacher.teacher_id}">
+                       
+                  </div>
+                
+                 <!-- Name Field -->
+                  <div class="form-group">
+                       <label for="name_field">Name</label>
+                       <input name="name"
+                        type="text" class="form-control"
+                         id="name_field" 
+                         aria-describedby="emailHelp" 
+                         placeholder="Enter Here"
+                        required="required" 
+                        th:value="${teacher.name}">
+                       
+                  </div>
+                  
+                
+                  
+                  <!-- Email Field -->
+                  <div class="form-group">
+                       <label for="email_field">Email Address</label>
+                       <input  
+                       name="email" 
+                       type="email" 
+                       class="form-control"
+                        id="eamil_field" aria-describedby="emailHelp" 
+                        placeholder="Enter Here"
+                        required="required" 
+                        th:value="${teacher.email}">                      
+                  </div>
+                  
+                   <div class="form-group">
+                       <label for="Contact_no_field">Contact Number</label>
+                       <input name="contact_no"
+                        type="number" class="form-control"
+                         id="Contact_no_field" 
+                         aria-describedby="emailHelp" 
+                         placeholder="Enter Here"
+                        required="required" 
+                        th:value="${teacher.contact_no}">
+                       
+                  </div>
+                  
+                   <!-- subject Field -->
+                  <div class="form-group">
+                       <label for="subject_field">Subject Specialization</label>
+                       <input name="subject"
+                        type="text" class="form-control"
+                         id="subject_field" 
+                         aria-describedby="emailHelp" 
+                         placeholder="Enter Here"
+                        required="required" 
+                        th:value="${teacher.subject}">
+                       
+                  </div>
+                  
+                  <!-- Password Field -->
+                  <div class="form-group">
+                       <label for="password_field">Password</label>
+                       <input
+                        name="password" 
+                        type="password"
+                        class="form-control" id="password_field" 
+                        aria-describedby="emailHelp" 
+                        placeholder="Enter here"
+                        required="required">  
+                  </div>
+                  
+                  <!-- User About field -->
+                  <div class="form-group">
+                     <textarea
+                     name="about"
+                      th:value="${teacher.about}" 
+                      placeholder="Enter Something About Yourself"  
+                      rows="4" class="form-control"></textarea>
+                  
+                  </div>
+                  
+                  <!-- Terms And Condition field -->
+                  <div class="form-group form-check text-center">
+                     <input type="checkbox" 
+                      name="agreement"
+                      class="form-check-input"
+                      id="agreement"
+                      />
+                     <label  for="agreement">Accept terms and conditions</label>
+                  </div>
+                  
+                    <div class="container text-center">
+                  <button th:action="@{/do_registered}"  type="submit" class="btn bg-primary text-white"> Submit</button>
+                 
+                  
+                  <button type="reset" class="btn bg-warning text-white">Reset</button>
+                  </div>
+                  
+                  
+              </div>
+           </div>
+         </div>
+     </div>
+</section>
+
+</body>
+</html>

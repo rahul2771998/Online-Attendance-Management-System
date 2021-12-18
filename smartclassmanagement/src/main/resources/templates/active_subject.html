@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title th:value="@{attendance}"></title>
+</head>
+<body>
+<section >
+     <div class="container">
+         <div class="row">
+         
+           <div class="col-md-6 offset-md-2">
+              <div class="my-card mt-1">
+              
+              
+              
+              <div class="container text-center">
+              <img  style="width:50px;" src=""  th:src="@{/Image/register.png/}"></img>
+               </div>
+               
+               <h1 class='text-center'>Change Subject Status</h1>
+               
+                <form novalidate action="" th:action="@{/active_subject}" method="post" th:object="${attendance}" >
+               
+                        
+                  <div class="form-group">
+                       <label for="email_field">Subject Id</label>
+                       <input  
+                       name="subject_id"
+                       type="number" 
+                       class="form-control"
+                        id="eamil_field" aria-describedby="emailHelp" 
+                        placeholder="Enter Here"
+                        required="required" 
+                        >                      
+                  </div>
+                  
+                  <div class="form-group">
+                       <label for="email_field">Subject Status</label>
+                       <input  
+                       name="status"
+                       type="text" 
+                       class="form-control"
+                        id="eamil_field" aria-describedby="emailHelp" 
+                        placeholder="Enter Here"
+                        required="required" 
+                        >                      
+                  </div>
+                  
+                  
+                  
+ 
+                  
+                  <!-- Terms And Condition field -->
+                  <div class="form-group form-check text-center">
+                     <input type="checkbox" 
+                      name="agreement"
+                      class="form-check-input"
+                      id="agreement"
+                      />
+                     <label  for="agreement">Accept terms and conditions</label>
+                  </div>
+                  
+                    <div class="container text-center">
+                  <button type="submit" class="btn bg-primary text-white"> Submit</button>
+                 
+                  </div>
+                  
+                  
+              </div>
+           </div>
+         </div>
+     </div>
+</section>
+
+</body>
+</html>
